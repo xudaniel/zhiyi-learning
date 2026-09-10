@@ -1,0 +1,17 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>readFile(path.join(root,p),'utf8');
+const jsData=s=>JSON.stringify(JSON.parse(s)).replaceAll('<','\\u003c');
+let app=(await read('src/app.js')).replace('__LESSONS__',jsData(await read('src/lessons.json'))).replace('__SOURCES__',jsData(await read('src/sources.json')));
+const image='data:image/jpeg;base64,'+(await readFile(path.join(root,'assets/wenchang-77.jpg'))).toString('base64');
+const method=(await read('src/method.js')).replaceAll('__WEN_IMAGE__',image);
+const script=app+'\n'+method+'\n'+await read('src/pinyin.js')+'\nrender();installPinyin();\n';
+if(script.toLowerCase().includes('</script>'))throw Error('Unexpected inline script terminator');
+let html=(await read('src/index.html')).replace('__STYLES__',await read('src/style.css')).replace('__APP__',script);
+html=html.replace('<title>知易 · 跟施老师从零学起</title>','<title>知易 · 施老师方法 · 拼音入门</title><meta name="description" content="按施老师课程方法，从零学习干支、五行、四柱。每次出现都带拼音，提供8步互动练习与12节短课。">');
+await mkdir(path.join(root,'docs'),{recursive:true});
+await writeFile(path.join(root,'docs/.nojekyll'),'');
+await writeFile(path.join(root,'docs/index.html'),html);
+console.log('Built docs/index.html (self-contained, offline-capable)');
