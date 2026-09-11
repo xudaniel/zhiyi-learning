@@ -18,8 +18,13 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run build:check
+      # The deployed artifact is checked above. This temporary fixture build is never published.
       - run: pnpm run build
-      - run: git diff --exit-code -- docs/index.html
+        env:
+          ZHIYI_COURSE_PASSWORD: ci-learning-test-only
       - run: pnpm test
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm run test:e2e
+        env:
+          ZHIYI_COURSE_PASSWORD: ci-learning-test-only

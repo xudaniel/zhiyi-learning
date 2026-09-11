@@ -1,3 +1,4 @@
+import {unlockApp} from './access-helpers.mjs';
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {mkdir,readFile} from 'node:fs/promises';
@@ -9,10 +10,10 @@ const errors=[];page.on('pageerror',e=>errors.push(e.message));
 const flush=async()=>page.evaluate(()=>refreshPinyin());
 async function audit(label){await flush();const result=await page.evaluate(()=>{const bad=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);while(w.nextNode()){const n=w.currentNode;if(n.parentElement?.closest('ruby,script,style,textarea,select,option,input'))continue;if(Object.keys(PINYIN_CHARS).some(c=>n.textContent.includes(c)))bad.push(n.textContent.slice(0,100))}return {bad,nested:document.querySelectorAll('ruby ruby').length,overflow:document.documentElement.scrollWidth>innerWidth}});assert.deepEqual(result.bad,[],label);assert.equal(result.nested,0,label);assert.equal(result.overflow,false,label)}
 try{
- await page.goto(url);await audit('home');
+ await page.goto(url);await unlockApp(page);await audit('home');
  // Simulate an actual pre-pinyin record, then reload: storage key and course ids must stay compatible.
  await page.evaluate(()=>localStorage.setItem(KEY,JSON.stringify({done:[0],answers:{'0-0':1,'0-1':0},wrong:[],notes:{0:'甲乙与日元壬'},last:0,days:['2026-09-10']})));
- await page.reload();assert.equal(await page.evaluate(()=>state.done.includes(0)&&state.notes[0]==='甲乙与日元壬'),true);
+ await page.reload();await unlockApp(page);assert.equal(await page.evaluate(()=>state.done.includes(0)&&state.notes[0]==='甲乙与日元壬'),true);
  for(const name of ['courses','notes','review','sources']){await page.evaluate(n=>go(n),name);await audit(name)}
  await page.locator('#sourceSearch').fill('壬');await audit('search');assert.ok(await page.locator('#searchResults ruby').count()>0);
  for(let i=0;i<12;i++){await page.evaluate(i=>openLesson(i),i);await audit('lesson '+i);assert.equal(await page.locator('.question').count(),2)}
@@ -28,7 +29,7 @@ try{
  await page.locator('#m-wenStart').selectOption('日元为主');await page.locator('#m-wenStem').selectOption('壬');await page.locator('#m-wenTarget').selectOption('寅');await page.evaluate(()=>checkMethod());await audit('wen result');await page.locator('summary').click();await audit('source text');assert.ok(await page.locator('details ruby').count()>22);assert.equal(await page.locator('details img').evaluate(e=>e.complete&&e.naturalWidth>0),true);
  await page.locator('#methodNext').click();await page.locator('#methodSummary').fill('先找日元壬，再清点五行，结合月份与口诀起点。');await page.evaluate(()=>checkMethod());await audit('summary');assert.equal(await page.evaluate(()=>state.method.done.length),8);
  await page.evaluate(()=>go('notes'));const waiting=page.waitForEvent('download');await page.getByRole('button',{name:'导出学习记录 ↓'}).click();const download=await waiting;const saved=await download.path();const exported=JSON.parse(await readFile(saved,'utf8'));assert.equal(exported.state.method.inputs.stems,'甲乙丙丁戊己庚辛壬癸');assert.ok(!JSON.stringify(exported).includes('<ruby'));
- await page.evaluate(()=>localStorage.clear());await page.reload();await page.evaluate(()=>go('notes'));await page.locator('input[type=file]').setInputFiles(saved);await page.waitForFunction(()=>state.method.done.length===8);assert.equal(await page.evaluate(()=>state.notes[0]),'甲乙与日元壬');await audit('restored notes');
+ await page.evaluate(()=>localStorage.clear());await page.reload();await unlockApp(page);await page.evaluate(()=>go('notes'));await page.locator('input[type=file]').setInputFiles(saved);await page.waitForFunction(()=>state.method.done.length===8);assert.equal(await page.evaluate(()=>state.notes[0]),'甲乙与日元壬');await audit('restored notes');
  await mkdir(new URL('../test-results/',import.meta.url),{recursive:true});
  for(const width of [390,320]){await page.setViewportSize({width,height:844});for(const p of ['home','courses','notes','sources']){await page.evaluate(p=>go(p),p);await audit(`${width} ${p}`)}for(let i=0;i<8;i++){await page.evaluate(i=>{page='method';nav();methodStep(i)},i);await audit(`${width} method ${i}`)}for(const t of ['stems','branches','pillars','compass','flash']){await page.evaluate(t=>{practiceType=t;go('practice')},t);await audit(`${width} ${t}`)}}
  await page.setViewportSize({width:390,height:844});await page.evaluate(()=>{page='method';nav();methodStep(1)});await flush();await page.screenshot({path:fileURLToPath(new URL('../test-results/mobile.png',import.meta.url)),fullPage:true});

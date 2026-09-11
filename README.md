@@ -1,11 +1,26 @@
-# 知易 1.0.1 · 跟着案例，从零学起
+# 知易 1.0.2 · 跟着案例，从零学起
 
 [![检查状态](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml/badge.svg)](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml)
-[![版本 1.0.1](https://img.shields.io/badge/版本-1.0.1-294e42)](https://github.com/xudaniel/zhiyi-learning/releases/tag/v1.0.1)
+[![版本 1.0.2](https://img.shields.io/badge/版本-1.0.2-294e42)](https://github.com/xudaniel/zhiyi-learning/issues/10)
 
 按施老师已有课程组织的互动学习 App：**案例教学为核心，基础陪练配套，解释能回到课程依据。**
 
 **[开始第一个案例 →](https://xudaniel.github.io/zhiyi-learning/#cases)**　[我想先练读音](https://xudaniel.github.io/zhiyi-learning/#sound)　[继续今日复习](https://xudaniel.github.io/zhiyi-learning/#today)
+
+进入任何学习入口都需要课程密码，请向课程所有者获取。当前标签页刷新可继续学习；点击页面顶部的「锁定课程」可重新锁定，笔记和进度会保留。
+
+<details>
+<summary><b>密码入口如何使用？</b></summary>
+
+1. 打开在线课程或离线文件，输入课程所有者提供的密码。
+2. 解锁后会回到你打开的课程位置。独立打开新标签页时需要再次输入密码。
+3. 离开时点击「锁定课程」。浏览器禁止会话存储时，刷新也需要重新输入。
+
+完整发布页面经过密码加密。仓库源码及历史版本仍公开可访问；此入口不等同于服务端账号权限。
+
+[查看用户故事与验收 →](docs/password-story.md)
+
+</details>
 
 ## 选一个入口，马上开始
 
@@ -22,7 +37,7 @@
 <details open>
 <summary><b>第一次来：10 分钟体验一条完整学习路径</b></summary>
 
-1. 打开[案例教学](https://xudaniel.github.io/zhiyi-learning/#cases)，从第一张教学组合开始。
+1. 输入课程密码后打开[案例教学](https://xudaniel.github.io/zhiyi-learning/#cases)，从第一张教学组合开始。
 2. 按顺序完成：定位日元 → 清点五行（wǔ xíng）→ 定位月份 → 检查关系 → 练习文昌（wén chāng）查法。
 3. 每步先选答案，答对后进入下一步。答错时看解析，也可以打开课程来源核对。
 4. 完成后回看自己的作答顺序，把分析过程写成一段话。
@@ -95,12 +110,14 @@
 <details>
 <summary><b>离线使用、开发与验证</b></summary>
 
-下载 [docs/index.html](https://github.com/xudaniel/zhiyi-learning/raw/refs/heads/main/docs/index.html) 后双击打开，可离线学习。页面、课程和讲义原图都在同一个文件中；离线朗读仍取决于设备语音。
+下载 [docs/index.html](https://github.com/xudaniel/zhiyi-learning/raw/refs/heads/main/docs/index.html) 后双击打开，输入课程密码即可离线学习。页面、课程和讲义原图都在同一个文件中；离线朗读仍取决于设备语音。
 
 开发环境需要 Node.js 22+：
 
 ```sh
 pnpm install --frozen-lockfile
+pnpm run build:check
+# 通过本机环境设置 ZHIYI_COURSE_PASSWORD 后再构建与测试
 pnpm run build
 pnpm test
 pnpm exec playwright install chromium
@@ -109,7 +126,9 @@ pnpm run test:e2e
 
 使用已安装的 Chrome 可设置 `PLAYWRIGHT_CHANNEL=chrome`；指定 `APP_URL=https://xudaniel.github.io/zhiyi-learning/` 可验证线上版本。测试使用独立浏览器，不读取个人学习记录。
 
-`src/app.js`、`src/method.js` 保留原课程流程；`src/academy-core.js` 维护案例、来源、问答及复习规则；`src/academy.js` 实现新增交互；`src/pinyin.js` 负责逐次注音。课程数据位于 `src/lessons.json` 和 `src/sources.json`。构建生成独立页面 `docs/index.html`。
+构建与浏览器测试都从 `ZHIYI_COURSE_PASSWORD` 环境变量读取密码，不提供默认值。请勿把真实密码提交到仓库。`build:check` 核对已提交页面与源码是否一致；提供密码时也会解密核对全文。CI 先执行一致性检查，再用专用测试密码生成临时页面并跑完整测试，该临时页面不会发布。
+
+`src/gate.html` 与 `src/gate.js` 提供密码入口；`scripts/seal.mjs` 加密完整课程；`src/app.js`、`src/method.js` 保留原课程流程；`src/academy-core.js` 维护案例、来源、问答及复习规则；`src/academy.js` 实现新增交互；`src/pinyin.js` 负责逐次注音。课程数据位于 `src/lessons.json` 和 `src/sources.json`。构建生成独立页面 `docs/index.html`。
 
 GitHub Pages 从 `main` 的 `/docs` 发布。源码、生成页面和验证结果一并提交；正式版本见 [Releases](https://github.com/xudaniel/zhiyi-learning/releases)。回退版本时保留浏览器记录，并先导出备份。
 

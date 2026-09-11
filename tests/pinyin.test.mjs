@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
+import {compileCourse} from '../scripts/course.mjs';
 const context=vm.createContext({});
 vm.runInContext(readFileSync(new URL('../src/pinyin.js',import.meta.url),'utf8')+'\nthis.tokens=pronunciationTokens;this.plain=plainPronunciation;this.characters=PINYIN_CHARS;this.phrases=PINYIN_PHRASES;',context);
 const reading=s=>Array.from(context.tokens(s),t=>t.reading||'_').join(' ');
@@ -28,8 +29,8 @@ test('the difficult terms have tones and phrase syllables align one-to-one',()=>
  for(const [word,reading] of Object.entries(context.phrases))assert.equal([...word].length,reading.split(' ').length,word);
  assert.equal(context.plain('戊己'),'戊（wù）己（jǐ）');
 });
-test('built release excludes private cases and is self-contained',()=>{
- const html=readFileSync(new URL('../docs/index.html',import.meta.url),'utf8');
+test('compiled course excludes private cases and is self-contained',async()=>{
+ const html=await compileCourse();
  for(const forbidden of ['你老婆','你太太','1991年生','辛未年','你这两个小孩','你今年家庭','江苏那个朋友','drive.google.com/file/d/','app.notion.com/p/'])assert.ok(!html.includes(forbidden),forbidden);
  assert.ok(html.includes('data:image/jpeg;base64,'));assert.ok(!html.includes('src="http'));
  assert.ok(html.includes("const KEY='zhiyi-learning-v1'"));
