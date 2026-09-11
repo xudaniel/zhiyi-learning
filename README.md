@@ -4,6 +4,9 @@
 
 [![检查状态](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml/badge.svg)](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml)
 [![版本 2.1.0](https://img.shields.io/badge/版本-2.1.0-254d40)](https://github.com/xudaniel/zhiyi-learning/releases/tag/v2.1.0)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue)](LICENSING.md)
+
+原创代码采用 [MIT License](LICENSE)，版权署名为 Daniel Xu；课程内容与讲义图片的[独立权利说明](LICENSING.md)请一并阅读。
 
 按施老师已有课程组织的互动学习书房。**连续学习帮助从零起步：10 个单元、40 道有出处的练习，把概念、作答、反馈与复习串在同一条路径里。**
 
@@ -147,6 +150,7 @@
 - [连续学习 · #15](https://github.com/xudaniel/zhiyi-learning/issues/15)
 - [课程扩充与覆盖清单 · #16](https://github.com/xudaniel/zhiyi-learning/issues/16)
 - [课程助教服务 · #17](https://github.com/xudaniel/zhiyi-learning/issues/17)
+- [软件许可与课程内容权利 · #18](https://github.com/xudaniel/zhiyi-learning/issues/18)
 - [分级实战与分析报告 · #11](https://github.com/xudaniel/zhiyi-learning/issues/11)
 - [个人路线与每日计划 · #12](https://github.com/xudaniel/zhiyi-learning/issues/12)
 - [课程知识地图 · #13](https://github.com/xudaniel/zhiyi-learning/issues/13)
@@ -170,8 +174,17 @@ pnpm run test:e2e
 
 可设 `PLAYWRIGHT_CHANNEL=chrome` 使用本机 Chrome，或设 `APP_URL` 验证指定网址。测试使用独立浏览器，不读取个人记录。
 
-`src/curriculum.json` 管理 10 个单元及 40 道题，`src/journey-core.js` 与 `src/journey.js` 管理连续学习和备份；`server/` 与 `api/tutor.js` 提供课程助教服务。`src/mastery-core.js` 维护原有 的训练、诊断、推荐与知识关系；`src/mastery.js` 实现学习界面，`src/mastery.css` 提供布局。基础课程与既有练习保留在原模块；`src/pinyin.js` 负责逐次注音；`scripts/seal.mjs` 加密完整页面。GitHub Pages 从 `main` 的 `/docs` 发布。
+`src/curriculum.json` 管理 10 个单元及 40 道题，`src/journey-core.js` 与 `src/journey.js` 管理连续学习和备份；`server/` 与 `api/tutor.js` 提供课程助教服务。`src/mastery-core.js` 维护原有的训练、诊断、推荐与知识关系；`src/mastery.js` 实现学习界面，`src/mastery.css` 提供布局。基础课程与既有练习保留在原模块；`src/pinyin.js` 负责逐次注音；`scripts/seal.mjs` 加密完整页面。GitHub Pages 从 `main` 的 `/docs` 发布。
 
 </details>
 
-源课程及讲义图片的权利属于原权利人；本仓库没有授予课程材料再分发许可。新增程序代码由开发者 Daniel Xu 维护，保留权利，未另行指定开源许可证。
+<details>
+<summary><b>许可证与课程内容权利</b></summary>
+
+**原创软件采用 [MIT License](LICENSE)，Copyright (c) 2026 Daniel Xu。** 允许使用、修改、分发和商用程序代码，须按 MIT 条款保留版权及许可声明。
+
+课程文字、摘录、题库、案例教学内容与讲义图片保留各自权利，不在 MIT 授权范围内。此区分也适用于源码和测试中嵌入的课程内容，以及完整课程页面和离线副本。第三方组件保持自身许可证。
+
+[查看中英文授权范围及文件清单 →](LICENSING.md) · [查看标准 MIT 正文](LICENSE) · [授权 Story #18](https://github.com/xudaniel/zhiyi-learning/issues/18)
+
+</details>
