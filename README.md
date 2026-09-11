@@ -1,7 +1,7 @@
-# 知易 1.0 · 跟着案例，从零学起
+# 知易 1.0.1 · 跟着案例，从零学起
 
 [![检查状态](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml/badge.svg)](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml)
-[![版本 1.0.0](https://img.shields.io/badge/版本-1.0.0-294e42)](https://github.com/xudaniel/zhiyi-learning/releases/tag/v1.0.0)
+[![版本 1.0.1](https://img.shields.io/badge/版本-1.0.1-294e42)](https://github.com/xudaniel/zhiyi-learning/releases/tag/v1.0.1)
 
 按施老师已有课程组织的互动学习 App：**案例教学为核心，基础陪练配套，解释能回到课程依据。**
 
@@ -12,7 +12,7 @@
 | 你想做到什么 | 打开互动功能 | 学习成果 |
 | --- | --- | --- |
 | 把分析步骤连起来 | [① 案例教学](https://xudaniel.github.io/zhiyi-learning/#cases) | 两张教学组合，每例五步；先判断、再看解析，最后写自己的复述 |
-| 理解条件变化 | [② 月份对照](https://xudaniel.github.io/zhiyi-learning/#compare) | 比较老师口述的二月与五六月，理解冷暖、水量与结论的关系 |
+| 理解条件变化 | [② 月份对照](https://xudaniel.github.io/zhiyi-learning/#compare) | 比较老师课中使用的二月与五六月，理解冷暖、水量与结论的关系 |
 | 认清难字、读准声音 | [③ 听读陪练](https://xudaniel.github.io/zhiyi-learning/#sound) | 24 张听读卡，包含全部天干（tiān gān）地支（dì zhī）及易混字 |
 | 记住自己的薄弱点 | [④ 今日复习](https://xudaniel.github.io/zhiyi-learning/#today) | 错题当天重练，答对后按 1、3、7 天安排 |
 | 弄清“为什么这样说” | [⑤ 课程答疑](https://xudaniel.github.io/zhiyi-learning/#ask) | 13 条有出处的问答；收藏解释，保存待核问题 |
@@ -48,15 +48,15 @@
 <details>
 <summary><b>这些解释依据什么？</b></summary>
 
-- 学习讲解依据施老师《易学讲座·实战篇（上）》的既有总结和第二节口述课。
+- 学习讲解依据施老师《易学讲座·实战篇（上）》的既有总结和第二节课。
 - 每个案例步骤、月份对照与答疑条目都能打开对应课程摘录，标明来源名称、位置及类型。
-- 文昌（wén chāng）诀（jué）已对照讲义第 77 页，提供原图及可注音转写。其他页码沿用已有总结。
+- 文昌（wén chāng）诀（jué）已对照讲义第 77 页，提供原图及可注音文字版。其他页码沿用已有总结。
 - 天乙（tiān yǐ）口诀中尚未明确的口径保留为待核，未合并成自动算法。
 - 题目、解析与练习顺序是 App 根据课程作的教学整理；答疑是本地问答库，不是实时生成式 AI。
 
 [查看课程资料 →](https://xudaniel.github.io/zhiyi-learning/#sources)　[搜索概念答疑 →](https://xudaniel.github.io/zhiyi-learning/#ask)
 
-公开资料为经过整理的学习摘录，已省略口述稿中的个人家庭与具体命盘案例。教学组合不对应个人生日。传统解释作为课程观点呈现。
+公开资料为经过整理的学习摘录，已省略课程资料中的个人家庭与具体命盘案例。教学组合不对应个人生日。传统解释作为课程观点呈现。
 
 </details>
 

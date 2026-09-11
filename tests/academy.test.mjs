@@ -38,7 +38,7 @@ test('review schedules wrong today then 1, 3, 7 days; repeating on same day cann
  r=a.nextReview(r,false,at('22'));assert.equal(r.stage,0);assert.equal(r.due,'2026-09-22');assert.equal(r.attempts,6);assert.equal(r.correct,4);
 });
 test('backup preserves notes, bookmarks and schedules, rejects malformed entries, and merges newer records',()=>{
- const record={lastCase:'b',cases:{a:{step:5,answers:{0:{choice:1,attempts:2}},note:'甲乙 <script>',updatedAt:10}},compare:{choice:1,note:'条件不同',updatedAt:3},reviews:{'sound:戊':a.nextReview(null,false,new Date('2026-09-11T12:00:00'))},bookmarks:['wen','not-real'],pending:['原录音待核']};
+ const record={lastCase:'b',cases:{a:{step:5,answers:{0:{choice:1,attempts:2}},note:'甲乙 <script>',updatedAt:10}},compare:{choice:1,note:'条件不同',updatedAt:3},reviews:{'sound:戊':a.nextReview(null,false,new Date('2026-09-11T12:00:00'))},bookmarks:['wen','not-real'],pending:['课程资料待核']};
  const cleaned=a.safeAcademy(record);assert.equal(cleaned.cases.a.note,'甲乙 <script>');assert.deepEqual(plain(cleaned.bookmarks),['wen']);assert.deepEqual(plain(a.safeAcademy(cleaned)),plain(cleaned));
  const merged=a.mergeAcademy(cleaned,{...record,cases:{a:{...record.cases.a,note:'new',updatedAt:11}}});assert.equal(merged.cases.a.note,'new');assert.equal(a.mergeAcademy(merged,record).cases.a.note,'new');
  assert.deepEqual(plain(a.safeAcademy({reviews:{'bad':{attempts:1},'sound:戊':{attempts:-1}}}).reviews),{});

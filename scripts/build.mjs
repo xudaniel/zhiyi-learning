@@ -10,7 +10,7 @@ const method=(await read('src/method.js')).replaceAll('__WEN_IMAGE__',image);
 const script=app+'\n'+method+'\n'+await read('src/pinyin.js')+'\n'+await read('src/academy-core.js')+'\n'+(await read('src/academy.js')).replaceAll('__WEN_IMAGE__',image)+'\nrender();installPinyin();startAcademy();\n';
 if(script.toLowerCase().includes('</script>'))throw Error('Unexpected inline script terminator');
 let html=(await read('src/index.html')).replace('__STYLES__',await read('src/style.css')).replace('__APP__',script);
-html=html.replace('<title>知易 · 跟施老师从零学起</title>','<title>知易 1.0 · 案例教学 · 拼音入门</title><meta name="description" content="按施老师课程方法，从零学习干支、五行、四柱。每次出现都带拼音，提供8步互动练习与12节短课。">');
+html=html.replace('<title>知易 · 跟施老师从零学起</title>','<title>知易 1.0.1 · 案例教学 · 拼音入门</title><meta name="description" content="按施老师课程方法，从零学习干支、五行、四柱。每次出现都带拼音，提供8步互动练习与12节短课。">');
 await mkdir(path.join(root,'docs'),{recursive:true});
 await writeFile(path.join(root,'docs/.nojekyll'),'');
 await writeFile(path.join(root,'docs/index.html'),html);
