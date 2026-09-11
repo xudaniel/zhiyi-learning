@@ -1,6 +1,6 @@
 {
   "name": "zhiyi-learning",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,11 +9,12 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "test:e2e": "node tests/access-e2e.mjs && node tests/e2e.mjs && node tests/academy-e2e.mjs",
+    "test:e2e": "node tests/access-e2e.mjs && node tests/e2e.mjs && node tests/academy-e2e.mjs && node tests/mastery-e2e.mjs",
     "build:check": "node scripts/build.mjs --check"
   },
   "devDependencies": {
     "playwright": "1.58.2"
   },
-  "packageManager": "pnpm@11.19.0"
+  "packageManager": "pnpm@11.19.0",
+  "author": "Daniel Xu"
 }

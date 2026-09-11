@@ -13,7 +13,7 @@ const gateReady=()=>page.locator('#gateForm[data-ready="true"]').waitFor();
 const appReady=()=>page.locator('#nav button').first().waitFor();
 try{
  // All deep links must land at the gate without rendering course navigation or content.
- for(const route of ['home','courses','lesson','method','practice','cases','compare','sound','today','ask','review','notes','sources']){
+ for(const route of ['studio','path','knowledge/day','about','home','courses','lesson','method','practice','cases','compare','sound','today','ask','review','notes','sources']){
   await page.goto(url+'#'+route);await gateReady();assert.equal(await page.locator('#nav,#view,.source-text,.case-work').count(),0);
  }
  await page.locator('#unlockCourse').click();assert.match(await page.locator('#gateStatus').textContent(),/请输入课程密码/);

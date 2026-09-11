@@ -1,5 +1,19 @@
 # 版本记录
 
+## 2.0.0
+
+开发者 Daniel Xu
+
+- 分级实战：两个案例各提供完整示范、渐退提示与独立分析；逐步核对判断、依据和边界，保留草稿、报告与最近五份重练历史。
+- 个人路线：六项入门诊断、前置能力关系、推荐原因、固定日计划与概念自测。能力状态依据实际作答。
+- 知识地图：13 个可检索节点，包含适用条件、易错点、相关概念、课程摘录与对应练习。
+- 重组学习首页与导航，在密码入口、首页、页脚、关于页面、报告、备份和 README 标注开发者 Daniel Xu。
+- 新数据随完整备份导出、恢复，与 1.x 记录兼容；保留密码入口、离线单文件、原有课程及逐次拼音。
+
+表达反馈只检查结构与是否填写，语义仍需对照课程复核。
+
+Stories / Issues：[#11](https://github.com/xudaniel/zhiyi-learning/issues/11)、[#12](https://github.com/xudaniel/zhiyi-learning/issues/12)、[#13](https://github.com/xudaniel/zhiyi-learning/issues/13)、[#14](https://github.com/xudaniel/zhiyi-learning/issues/14)。
+
 ## 1.0.2
 
 - 所有学习入口统一要求课程密码，完整页面经密码加密后发布。
