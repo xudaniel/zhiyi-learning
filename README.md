@@ -1,13 +1,13 @@
-# 知易 2.0 · 让每一步都有依据
+# 知易 2.1 · 一次学一点，换着条件练
 
 **开发者 Daniel Xu**
 
 [![检查状态](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml/badge.svg)](https://github.com/xudaniel/zhiyi-learning/actions/workflows/check.yml)
-[![版本 2.0.0](https://img.shields.io/badge/版本-2.0.0-254d40)](https://github.com/xudaniel/zhiyi-learning/releases/tag/v2.0.0)
+[![版本 2.1.0](https://img.shields.io/badge/版本-2.1.0-254d40)](https://github.com/xudaniel/zhiyi-learning/releases/tag/v2.1.0)
 
-按施老师已有课程组织的互动学习书房。**分级实战为核心，个人路线帮助从零起步，知识地图把每个判断接回课程依据。**
+按施老师已有课程组织的互动学习书房。**连续学习帮助从零起步：10 个单元、40 道有出处的练习，把概念、作答、反馈与复习串在同一条路径里。**
 
-**[打开学习书房 →](https://xudaniel.github.io/zhiyi-learning/)**　[进入分级实战](https://xudaniel.github.io/zhiyi-learning/#studio)　[查看学习路线](https://xudaniel.github.io/zhiyi-learning/#path)　[浏览知识地图](https://xudaniel.github.io/zhiyi-learning/#knowledge)
+**[开始连续学习 →](https://xudaniel.github.io/zhiyi-learning/#journey)**　[选择学习单元](https://xudaniel.github.io/zhiyi-learning/#curriculum)　[进入分级实战](https://xudaniel.github.io/zhiyi-learning/#studio)　[查看学习路线](https://xudaniel.github.io/zhiyi-learning/#path)　[浏览知识地图](https://xudaniel.github.io/zhiyi-learning/#knowledge)
 
 所有学习入口均需课程密码，请向课程所有者获取。同一标签页刷新可继续学习，点击「锁定课程」可重新锁定，原有笔记和进度保留。
 
@@ -22,16 +22,45 @@
 | 想巩固自己的薄弱点 | [今日复习](https://xudaniel.github.io/zhiyi-learning/#today) | 由实际作答产生的错题与 1、3、7 天复习安排 |
 
 <details open>
-<summary><b>第一次用 2.0：走完一条完整学习路径</b></summary>
+<summary><b>第一次用 2.1：完成一个 5–8 分钟的学习单元</b></summary>
 
-1. 打开[学习路线](https://xudaniel.github.io/zhiyi-learning/#path)，完成六个小判断。也可以跳过，先按基础顺序学习。
-2. 在今天的安排里读一个概念，并完成对应自测。
-3. 进入[分级实战](https://xudaniel.github.io/zhiyi-learning/#studio)，选择案例和层级。
-4. 先看「完整示范」，再用「渐退提示」按步练习，最后进入「独立分析」。
-5. 独立分析一次提交五步，逐项填写判断、观察、课程依据、适用理由与未决条件。
-6. 对照报告回看偏差，从报告直接跳到知识节点或对应基础课，然后重新作答。
+1. 从[课程全景](https://xudaniel.github.io/zhiyi-learning/#curriculum)选择一个重点，或从首页继续上次学习。
+2. 读一段概念，确认它的使用条件。
+3. 依次完成基础例题、条件变化、辨错练习和独立挑战；每次只显示一个任务。
+4. 核对判断后展开真实课程摘录。答错可订正；首次结果和订正结果分别保留。
+5. 独立挑战可以留一句自己的解释，完成后自动安排间隔复习。
 
-两张教学组合不是个人生日命盘。每个案例、每个层级有独立草稿和进度，刷新后可以继续。
+手机、电脑均可使用。刷新后继续当前步骤，单元之间分别保存；完整分析练习仍在[分级实战](https://xudaniel.github.io/zhiyi-learning/#studio)。
+
+</details>
+
+<details>
+<summary><b>10 个单元与 40 道练习：直接选择一个重点</b></summary>
+
+| 主题 | 互动单元 |
+| --- | --- |
+| 基础语言 | [成组分类](https://xudaniel.github.io/zhiyi-learning/#journey/language) · [物象记忆](https://xudaniel.github.io/zhiyi-learning/#journey/imagery) · [两种循环](https://xudaniel.github.io/zhiyi-learning/#journey/elements) |
+| 读图与分析 | [栏目定位](https://xudaniel.github.io/zhiyi-learning/#journey/roots) · [定位起点](https://xudaniel.github.io/zhiyi-learning/#journey/day) · [逐字清点](https://xudaniel.github.io/zhiyi-learning/#journey/count) · [月份条件](https://xudaniel.github.io/zhiyi-learning/#journey/seasons) · [配对与层次](https://xudaniel.github.io/zhiyi-learning/#journey/clashes) · [起点与命中](https://xudaniel.github.io/zhiyi-learning/#journey/wenchang) |
+| 方位基础 | [转图辨向](https://xudaniel.github.io/zhiyi-learning/#journey/directions) |
+
+每个单元四种练法。题目与示例属于根据课程设计的教学练习；引用保留“课程原文摘录、既有讲稿总结、已核讲义原页”的类型。
+
+课程全景明确列出已覆盖与待补范围。完整卦（guà）理、历法排盘、住宅测量与布局等尚待补充相应课程，不凭空扩写老师结论。
+
+</details>
+
+<details>
+<summary><b>课程助教：现在能做什么？</b></summary>
+
+[打开课程助教](https://xudaniel.github.io/zhiyi-learning/#tutor)。可从连续学习的独立挑战或原分析草稿带入自己的解释，也可以直接写问题；草稿保存在本机。
+
+**本次发布已包含助教界面、服务端和部署配置，真实 AI 服务尚未连接。** 页面会显示“AI 服务待连接”，不把本地预设问答说成实时 AI。现有[课程问答](https://xudaniel.github.io/zhiyi-learning/#ask)仍可离线使用。
+
+服务配置完成后，助教会反馈“已经说清、建议修正、还需补充”，并给出引导问题。服务端只选取版本内的课程片段，校验引用 ID 与逐字原文；缺少依据或引用不符时保留待核。
+
+提交仅发送当前文字、主题及题目编号，再由服务端选取相关课程片段。不会自动上传其他笔记；模型凭据保存在服务端。生成的教学反馈需要对照课程复核，引用匹配本身不保证推理正确。
+
+[服务部署与启用说明](docs/tutor-deployment.md) · [待完成的在线接入 #17](https://github.com/xudaniel/zhiyi-learning/issues/17)
 
 </details>
 
@@ -89,7 +118,7 @@
 <details>
 <summary><b>怎样保存、迁移和离线使用？</b></summary>
 
-- 在[我的笔记](https://xudaniel.github.io/zhiyi-learning/#notes)导出学习记录，备份包含新旧课程进度、分析草稿与历史、诊断、每日计划、收藏和复习安排。
+- 在[我的笔记](https://xudaniel.github.io/zhiyi-learning/#notes)导出学习记录，备份包含新旧课程进度、连续学习的首次与订正记录、单元复述、助教草稿、分析草稿与历史、诊断、每日计划、收藏和复习安排。
 - 1.x 备份仍可恢复。原有非空课程笔记优先保留；新增训练按更新时间合并，较旧备份不会替换较新的草稿。
 - 进度只保存在当前浏览器，不自动上传或跨设备同步。更换设备、浏览器或网址时，用备份迁移。
 - 下载 [docs/index.html](https://github.com/xudaniel/zhiyi-learning/raw/refs/heads/main/docs/index.html)，双击后输入课程密码即可离线学习。
@@ -115,12 +144,15 @@
 <details>
 <summary><b>Stories、验证与版本记录</b></summary>
 
+- [连续学习 · #15](https://github.com/xudaniel/zhiyi-learning/issues/15)
+- [课程扩充与覆盖清单 · #16](https://github.com/xudaniel/zhiyi-learning/issues/16)
+- [课程助教服务 · #17](https://github.com/xudaniel/zhiyi-learning/issues/17)
 - [分级实战与分析报告 · #11](https://github.com/xudaniel/zhiyi-learning/issues/11)
 - [个人路线与每日计划 · #12](https://github.com/xudaniel/zhiyi-learning/issues/12)
 - [课程知识地图 · #13](https://github.com/xudaniel/zhiyi-learning/issues/13)
 - [专业界面、开发者署名与发布 · #14](https://github.com/xudaniel/zhiyi-learning/issues/14)
 
-[2.0 产品规格](docs/v2-stories.md) · [验证记录](docs/v2-verification.md) · [版本变化](CHANGELOG.md) · [正式版本](https://github.com/xudaniel/zhiyi-learning/releases)
+[2.1 Stories](docs/v2.1-stories.md) · [2.1 验证记录](docs/v2.1-verification.md) · [2.0 产品规格](docs/v2-stories.md) · [版本变化](CHANGELOG.md) · [正式版本](https://github.com/xudaniel/zhiyi-learning/releases)
 
 开发环境为 Node.js 22+：
 
@@ -138,7 +170,7 @@ pnpm run test:e2e
 
 可设 `PLAYWRIGHT_CHANNEL=chrome` 使用本机 Chrome，或设 `APP_URL` 验证指定网址。测试使用独立浏览器，不读取个人记录。
 
-`src/mastery-core.js` 维护 2.0 的训练、诊断、推荐与知识关系；`src/mastery.js` 实现学习界面，`src/mastery.css` 提供布局。基础课程与既有练习保留在原模块；`src/pinyin.js` 负责逐次注音；`scripts/seal.mjs` 加密完整页面。GitHub Pages 从 `main` 的 `/docs` 发布。
+`src/curriculum.json` 管理 10 个单元及 40 道题，`src/journey-core.js` 与 `src/journey.js` 管理连续学习和备份；`server/` 与 `api/tutor.js` 提供课程助教服务。`src/mastery-core.js` 维护原有 的训练、诊断、推荐与知识关系；`src/mastery.js` 实现学习界面，`src/mastery.css` 提供布局。基础课程与既有练习保留在原模块；`src/pinyin.js` 负责逐次注音；`scripts/seal.mjs` 加密完整页面。GitHub Pages 从 `main` 的 `/docs` 发布。
 
 </details>
 
