@@ -1,0 +1,3 @@
+.tutor-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(220px,1fr);gap:22px;align-items:start}.tutor-layout textarea{line-height:1.9}.tutor-layout .note{margin-top:24px}.tutor-explainer ol{padding-left:22px;line-height:2.4}.tutor-explainer p{line-height:2}.tutor-feedback{border-bottom:1px solid #d9e1d5;padding:10px 0 15px}.tutor-feedback p{line-height:2}.tutor-layout input:disabled,.tutor-layout textarea:disabled{opacity:.7}.tutor-layout select{max-width:100%}
+.tutor-layout>*{min-width:0}.tutor-layout form{min-width:0}.tutor-layout select{width:100%;min-width:0}
+@media(max-width:850px){.tutor-layout{grid-template-columns:minmax(0,1fr)}.tutor-layout>.card{padding:23px}.tutor-layout .journey-actions{flex-direction:column}}

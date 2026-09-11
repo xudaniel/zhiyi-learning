@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node scripts/build-backend.mjs",
+  "outputDirectory": "backend-public",
+  "functions": {
+    "api/tutor.js": {
+      "maxDuration": 30,
+      "includeFiles": "{src/academy-core.js,src/mastery-core.js,src/sources.json,src/curriculum.json,docs/index.html}"
+    }
+  }
+}

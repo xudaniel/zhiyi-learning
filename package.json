@@ -1,6 +1,6 @@
 {
   "name": "zhiyi-learning",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,8 +9,9 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "test:e2e": "node tests/access-e2e.mjs && node tests/e2e.mjs && node tests/academy-e2e.mjs && node tests/mastery-e2e.mjs",
-    "build:check": "node scripts/build.mjs --check"
+    "test:e2e": "node tests/access-e2e.mjs && node tests/e2e.mjs && node tests/academy-e2e.mjs && node tests/mastery-e2e.mjs && node tests/journey-e2e.mjs && node tests/tutor-e2e.mjs",
+    "build:check": "node scripts/build.mjs --check",
+    "tutor:dev": "node server/local.mjs"
   },
   "devDependencies": {
     "playwright": "1.58.2"
