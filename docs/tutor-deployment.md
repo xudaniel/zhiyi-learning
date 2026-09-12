@@ -2,7 +2,7 @@
 
 开发者 Daniel Xu。
 
-2.1 包含可部署的助教界面与服务端。当前 `src/tutor-config.json` 的地址为空，正式课程显示“AI 服务待连接”。还没有完成真实模型调用验证，不将模拟服务测试等同于上线。追踪：[Issue #17](https://github.com/xudaniel/zhiyi-learning/issues/17)。
+2.3 包含可部署的助教界面与服务端。当前 `src/tutor-config.json` 的地址为空，正式课程显示“AI 服务待连接”。还没有完成真实模型调用验证，不将模拟服务测试等同于上线。追踪：[Issue #17](https://github.com/xudaniel/zhiyi-learning/issues/17)。
 
 ## 部署结构
 

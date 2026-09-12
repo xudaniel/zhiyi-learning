@@ -1,5 +1,19 @@
 # 版本记录
 
+## 2.3.0
+
+开发者 Daniel Xu / Developer: Daniel Xu
+
+- README 改为中文在前、英文在后的完整双语指南，增加语言跳转，保留学习入口和可展开说明。
+- 同步应用版本、在线与离线页面，修正原版案例页的旧版本标注。
+- 发布说明包含软件 MIT 授权、课程内容独立权利范围，以及真实 AI 服务仍待连接的状态。
+
+- Added a complete bilingual README with Chinese first, language links, direct learning links and expandable guides.
+- Updated the app version and online/offline pages, including the version shown on the original cases page.
+- Documented the MIT software license, separate course content rights and the live AI service's pending connection.
+
+[2.3 发布说明 / Release notes](docs/v2.3-release.md) · [Story #19](https://github.com/xudaniel/zhiyi-learning/issues/19)
+
 ## 2.1.0
 
 开发者 Daniel Xu。按方向 1 → 3 → 2 实施，先建 Stories / Issues。
